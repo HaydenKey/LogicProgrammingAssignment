@@ -17,7 +17,7 @@ public class Functions {
 
         //YOUR CODE END BEFORE THIS LINE
 
-        return answer;
+
     }
 
     public boolean problem1b(boolean p, boolean q, boolean r){
@@ -34,7 +34,7 @@ public class Functions {
 
         //YOUR CODE END BEFORE THIS LINE
 
-        return answer;
+
     }
 
     public boolean problem1c(boolean p, boolean q, boolean r){
@@ -45,8 +45,8 @@ public class Functions {
         answer = true;
 
         //YOUR CODE END BEFORE THIS LINE
-
         return answer;
+
     }
 
     //Write your own function for problem 1d
@@ -78,15 +78,8 @@ public class Functions {
 
         //YOUR CODE START AFTER THIS LINE
 
-        if (answer > b) {
-            answer = 0;
-        } else {
-            while (answer < b)
-            {
-                answer = answer + a;
-            }
-            answer = answer - a;
-        }
+        answer = (int)(a/b);
+
         //YOUR CODE END BEFORE THIS LINE
 
         return answer;
@@ -99,7 +92,14 @@ public class Functions {
 
         //YOUR CODE START AFTER THIS LINE
 
-        answer = (int)(a/b);
+        if (answer > b) {
+            answer = 0;
+        } else {
+            while (answer < b)
+            {
+                answer = answer + a;
+            }
+        }
 
         //YOUR CODE END BEFORE THIS LINE
 
@@ -160,12 +160,24 @@ public class Functions {
 
         for (int i = a; i > 0; i--)
         {
-            a = a+(a-1);
+            a = a*(a-1);
         }
 
         //YOUR CODE END BEFORE THIS LINE
 
         return answer;
+    }
+
+    public int factoral(int a)
+    {
+        int ans = 0;
+
+        for(int i = 0; i < a; i++)
+        {
+            ans = ans * i;
+        }
+
+        return ans;
     }
 
     //Count the number of a-permutations from a set of size b (b > a)
@@ -174,7 +186,13 @@ public class Functions {
 
         //YOUR CODE START AFTER THIS LINE
 
+        if (b < a)
+        {
+            System.out.println("b is less than a.  b needs to be greater than a.");
+            return answer;
+        }
 
+        answer = factoral(a)/factoral(b);
 
         //YOUR CODE END BEFORE THIS LINE
 
