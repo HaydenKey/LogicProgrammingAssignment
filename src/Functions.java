@@ -52,12 +52,12 @@ public class Functions {
     //Write your own function for problem 1d
     //YOUR CODE START AFTER THIS LINE
 
-    public boolean problem1d(boolean p, boolean q, boolean r){
+    public boolean problem1d(boolean p, boolean q){
         boolean answer = false;
 
         //YOUR CODE START AFTER THIS LINE
 
-        if (p==false && q==false)
+        if (p==false || q==false)
         {
             answer = true;
         } else {
@@ -78,7 +78,10 @@ public class Functions {
 
         //YOUR CODE START AFTER THIS LINE
 
-        answer = (int)(a/b);
+        double raw = a/b;
+        double excess = (a/b)%1;
+
+        answer =  (int)(raw-excess);
 
         //YOUR CODE END BEFORE THIS LINE
 
@@ -92,14 +95,7 @@ public class Functions {
 
         //YOUR CODE START AFTER THIS LINE
 
-        if (answer > b) {
-            answer = 0;
-        } else {
-            while (answer < b)
-            {
-                answer = answer + a;
-            }
-        }
+        answer = problem2a_floor(a,b) + 1;
 
         //YOUR CODE END BEFORE THIS LINE
 
@@ -141,43 +137,47 @@ public class Functions {
 
         //YOUR CODE START AFTER THIS LINE
 
-        for (int i = a; i > 0; i--)
-        {
-            a = a+(a-1);
-        }
+        answer = recursiveAdd(a);
 
         //YOUR CODE END BEFORE THIS LINE
 
         return answer;
+    }
+
+    private int recursiveAdd(int current)
+    {
+        if(current == 1)
+        {
+            return current;
+        }
+
+        return current + recursiveAdd(current - 1);
     }
 
     //Use recursion to calculate multiplication of all integer from 1 to 'a'
     //USE MUST USE RECURSION
     public int problem3c_multiply(int a){
-        int answer = 1;
+
 
         //YOUR CODE START AFTER THIS LINE
 
-        for (int i = a; i > 0; i--)
-        {
-            a = a*(a-1);
-        }
+        int answer = recursiveMultiply(a);
+
+        a = answer;
 
         //YOUR CODE END BEFORE THIS LINE
 
         return answer;
     }
 
-    public int factoral(int a)
+    private int recursiveMultiply(int current)
     {
-        int ans = 0;
-
-        for(int i = 0; i < a; i++)
+        if(current == 1)
         {
-            ans = ans * i;
+            return current;
         }
 
-        return ans;
+        return current * recursiveMultiply(current - 1);
     }
 
     //Count the number of a-permutations from a set of size b (b > a)
@@ -192,7 +192,7 @@ public class Functions {
             return answer;
         }
 
-        answer = factoral(a)/factoral(b);
+        answer = recursiveMultiply(b)/recursiveMultiply((b-a));
 
         //YOUR CODE END BEFORE THIS LINE
 

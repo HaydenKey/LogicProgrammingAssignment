@@ -3,6 +3,8 @@ public class Main {
         Functions f = new Functions();
         double points = 0;
 
+        System.out.println("Hello World!");
+
         //Problem 1a grading
         try{
             if (f.problem1a(true, true) == true){
@@ -35,14 +37,14 @@ public class Main {
 
         //Problem 1d grading
         // Uncomment the following lines after you finish writing problem1d in Functions.java
-      //  try{
-      //      if (f.problem1d(true, true) == false){
-      //          points += 2.5;
-      //          System.out.println("You got problem 1d correct 2.5 points");
-      //        }
-      //  }catch (Exception e) {
-      //      System.out.println("Exception Error Problem 1d");
-      //  }
+        try{
+            if (f.problem1d(true, true) == false){
+                points += 2.5;
+                System.out.println("You got problem 1d correct 2.5 points");
+              }
+        }catch (Exception e) {
+            System.out.println("Exception Error Problem 1d");
+        }
 
         //Problem 2a grading
         try{

@@ -35,14 +35,14 @@ public class Main2 {
 
         //Problem 1d grading
         // Uncomment the following lines after you finish writing problem1d in Functions.java
-      //  try{
-      //      if (f.problem1d(false, true) == true){
-      //          points += 2.5;
-      //          System.out.println("You got problem 1d correct 2.5 points");
-      //        }
-      //  }catch (Exception e) {
-      //      System.out.println("Exception Error Problem 1d");
-      //  }
+        try{
+            if (f.problem1d(false, true) == true){
+                points += 2.5;
+                System.out.println("You got problem 1d correct 2.5 points");
+              }
+        }catch (Exception e) {
+            System.out.println("Exception Error Problem 1d");
+        }
 
         //Problem 2a grading
         try{
